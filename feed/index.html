@@ -9,11 +9,11 @@
 
 <channel>
 	<title>Zcash</title>
-	<atom:link href="https://z.cash/feed/" rel="self" type="application/rss+xml" />
+	<atom:link href="index.html" rel="self" type="application/rss+xml" />
 	<link>https://z.cash</link>
 	<description>Privacy-protecting, digital currency built on strong science</description>
 	<lastBuildDate>
-	Wed, 01 May 2019 18:23:25 +0000	</lastBuildDate>
+	Wed, 08 May 2019 19:55:30 +0000	</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -29,6 +29,179 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>Sprout-to-Sapling Migration Tool</title>
+		<link>https://z.cash/blog/sprout-to-sapling-migration-tool/</link>
+				<pubDate>Wed, 08 May 2019 13:48:57 +0000</pubDate>
+		<dc:creator><![CDATA[Paige Peterson]]></dc:creator>
+				<category><![CDATA[General]]></category>
+		<category><![CDATA[Privacy]]></category>
+		<category><![CDATA[Technical]]></category>
+		<category><![CDATA[explainers]]></category>
+		<category><![CDATA[migration tool]]></category>
+		<category><![CDATA[privacy]]></category>
+		<category><![CDATA[Sapling]]></category>
+		<category><![CDATA[shielded addresses]]></category>
+		<category><![CDATA[sprout]]></category>
+		<category><![CDATA[transactions]]></category>
+		<category><![CDATA[turnstile]]></category>
+
+		<guid isPermaLink="false">https://z.cash/?p=7560</guid>
+				<description><![CDATA[<p>The Electric Coin Company is pleased to announce the official Sprout-to-Sapling migration tool in the 2.0.5-1 release of zcashd. This [&#8230;]</p>
+<p>The post <a rel="nofollow" href="../blog/sprout-to-sapling-migration-tool/index.html">Sprout-to-Sapling Migration Tool</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p>The Electric Coin Company is pleased to announce the official Sprout-to-Sapling migration tool in the <a href="../blog/new-release_-2-0-5-1.html">2.0.5-1 release</a> of zcashd. This tool comes in the form of new RPCs with the purpose of automatically and safely migrating the funds in Sprout addresses to Sapling addresses. <br></p>
+
+
+
+<p>Only users with funds in Sprout addresses need to use this tool. Users can confirm if they have funds in a Sprout address by checking to see if any of their addresses start with a “zc”. Sapling addresses are the standard shielded address since the Sapling network upgrade and start with a “zs”.</p>
+
+
+
+<h2>Why it’s needed</h2>
+
+
+
+<p>The privacy properties of shielded addresses (both Sprout and Sapling) make direct auditing of the total monetary supply impossible. Therefore, a <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/addresses.html#turnstiles">turnstile</a> mechanism is implemented to monitor value entering and exiting their associated <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/addresses.html#value-pools">value pools</a>. The turnstile prohibits direct transfer between shielded value pools without revealing the amount being moved. While this mechanism enhances auditing capabilities, revealing balances introduces <a href="../blog/maintaining-privacy/index.html">privacy concerns</a>. The Sprout-to-Sapling migration tool automates the process of moving funds to Sapling addresses in a way that reduces the potential for compromising user privacy. </p>
+
+
+
+<h2>How it works</h2>
+
+
+
+<p>This migration tool hides individual migration transactions among those of all users who are doing the migration at around the same time. Whenever the blockchain reaches a 500 block height interval, up to 5 migration transactions are created with transaction amounts picked according to a random distribution. The full specification of this tool can be found in <a href="https://github.com/zcash/zips/blob/master/zip-0308.rst">ZIP 308</a>.<br></p>
+
+
+
+<p>To migrate funds, zcashd users simply enable or disable the tool with z_setmigration. To check the status of the migration, users can call z_getmigrationstatus. Documentation for using these RPCs can be accessed in the official <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/sapling_turnstile.html#migration-tool">migration tool docs</a>. <br></p>
+
+
+
+<p>The migration tool is supported in zcashd v2.0.5-1 and up; for the latest version see the <a href="../download.html">download</a> page. We recommend third-party wallets that support both Sprout and Sapling addresses implement this tool as well. </p>
+
+
+
+<h2>Further Motivation</h2>
+
+
+
+<p>Before the activation of the Sapling Network Upgrade, we <a href="../blog/sapling-addresses-turnstile-migration/index.html">wrote</a> about the benefits of Sapling addresses and the risks associated with fund migration from legacy Sprout addresses. We supplied guidelines for manual migration in lieu of not having the tool ready but no longer recommend for anyone to migrate manually. <br></p>
+
+
+
+<p>The release of this tool is timed with the introduction of new consensus code which uses the turnstiles to enforce <a href="../blog/turnstile-enforcement-against-counterfeiting/index.html">defense against counterfeiting</a>. We hope that everyone who has ZEC in Sprout addresses will make use of this tool to safely move their funds. We look forward to increasing adoption of Sapling addresses across the Zcash ecosystem. Please connect with us in the <a href="https://chat.zcashcommunity.com/">community chat</a> or <a href="https://forum.zcashcommunity.com/">community forum</a> if you have any questions. <br></p>
+<p>The post <a rel="nofollow" href="../blog/sprout-to-sapling-migration-tool/index.html">Sprout-to-Sapling Migration Tool</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>New Release: 2.0.5-1</title>
+		<link>https://z.cash/blog/new-release-2-0-5-1/</link>
+				<pubDate>Wed, 08 May 2019 13:05:58 +0000</pubDate>
+		<dc:creator><![CDATA[Electric Coin Company]]></dc:creator>
+				<category><![CDATA[General]]></category>
+		<category><![CDATA[Technical]]></category>
+		<category><![CDATA[bugs]]></category>
+		<category><![CDATA[consensus]]></category>
+		<category><![CDATA[migration tool]]></category>
+		<category><![CDATA[releases]]></category>
+		<category><![CDATA[Sapling]]></category>
+		<category><![CDATA[sprout]]></category>
+
+		<guid isPermaLink="false">https://z.cash/?p=7562</guid>
+				<description><![CDATA[<p>Note: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users [&#8230;]</p>
+<p>The post <a rel="nofollow" href="../blog/new-release-2-0-5-1/index.html">New Release: 2.0.5-1</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
+]]></description>
+								<content:encoded><![CDATA[
+<p><strong>Note</strong>: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users who built v2.0.5 from source. Shortly after tagging v2.0.5, we became aware of an issue that caused nodes running Sprout-to-Sapling migrations to occasionally crash. Zcashd v2.0.5-1 fixes the issue. Users who normally upgrade via Debian package repository or tarball download were not exposed to v2.0.5.</p>
+
+
+
+<p>The v2.0.5 release added the Sprout-to-Sapling migration tool, introduced a new consensus rule on mainnet to reject blocks that violate turnstiles and adds 64-bit ARMv8 support. Zcashd v2.0.5-1 will be supported until block 593762, expected to arrive around 28th August 2019, at which point the software will end-of-support halt and shut down.</p>
+
+
+
+<h1>Notable Changes</h1>
+
+
+
+<h2>Sprout-to-Sapling Migration Tool</h2>
+
+
+
+<p>This release includes the addition of a tool that will enable users to migrate shielded funds from the Sprout pool to the Sapling pool while minimizing information leakage.</p>
+
+
+
+<p>The migration can be enabled using the RPC&nbsp;<code>z_setmigration</code>&nbsp;or by including&nbsp;<code>-migration</code>&nbsp;in the&nbsp;<code>zcash.conf</code>&nbsp;file. Unless otherwise specified funds will be migrated to the wallet&#8217;s default Sapling address; it is also possible to set the receiving Sapling address using the&nbsp;<code>-migrationdestaddress</code>&nbsp;option in&nbsp;<code>zcash.conf</code>.</p>
+
+
+
+<p>See the <a href="../blog/sprout-to-sapling-migration-tool.html">blog post</a>, <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/sapling_turnstile.html#migration-tool">documentation</a> and <a href="https://github.com/zcash/zips/blob/master/zip-0308.rst">ZIP 308</a> for more details.</p>
+
+
+
+<h2>New consensus rule: Reject blocks that violate turnstile</h2>
+
+
+
+<p>In the 2.0.4 release, the consensus rules were changed on testnet to enforce a new rule which marks blocks as invalid if they would lead to a turnstile violation in the Sprout or Shielded value pools. <strong>This release enforces the consensus rule change on mainnet.</strong></p>
+
+
+
+<p>The motivations and deployment details can be found in <a href="https://github.com/zcash/zips/blob/master/zip-0209.rst">ZIP 209</a> and <a href="https://github.com/zcash/zcash/pull/3968">PR 3968</a>.</p>
+
+
+
+<p>Developers can use a new experimental feature&nbsp;<code>-developersetpoolsizezero</code>&nbsp;to test Sprout and Sapling turnstile violations. See&nbsp;<a href="https://github.com/zcash/zcash/pull/3964">PR 3964</a>&nbsp;for more details.</p>
+
+
+
+<h2>64-bit ARMv8 support</h2>
+
+
+
+<p>Added ARMv8 (AArch64) support. This enables users to build zcash on even more devices.</p>
+
+
+
+<p>For information on how to build see the&nbsp;<a href="https://zcash.readthedocs.io/en/latest/rtd_pages/user_guide.html#build">User Guide</a></p>
+
+
+
+<p>Users on the Zcash forum have reported successes with both the Pine64 Rock64Pro and Odroid C2, which contain 4GB and 2GB of RAM respectively.</p>
+
+
+
+<p>Just released, the Odroid N2 looks like a great solution with 4GB of RAM. The newly released Jetson Nano Developer Kit from Nvidia (also 4GB of RAM) is also worth a look. The NanoPC-T3 Plus is another option but for the simplest/best experience choose a board with 4GB of RAM. Just make sure before purchase that the CPU supports the 64-bit ARMv8 architecture.</p>
+
+
+
+<h1>Summary of the Changes</h1>
+
+
+
+<h2>v2.0.5</h2>
+
+
+
+<ol><li>Sprout-to-Sapling migration (<a href="https://github.com/zcash/zcash/pull/3848">#3848</a>, <a href="https://github.com/zcash/zcash/pull/3888">#3888</a>, <a href="https://github.com/zcash/zcash/pull/3967">#3967</a>, <a href="https://github.com/zcash/zcash/pull/3973">#3973</a>, <a href="https://github.com/zcash/zcash/pull/3977">#3977</a>)</li><li>Activate turnstile on mainnet (<a href="https://github.com/zcash/zcash/pull/3968">#3968</a>)</li><li>Update boost to v1.70.0 to eliminate build warning (<a href="https://github.com/zcash/zcash/pull/3951">#3951</a>)</li><li>Fix new HD seed generation for previously-encrypted wallets (<a href="https://github.com/zcash/zcash/pull/3940">#3940</a>)</li><li>Fix enable-debug build DB_COINS undefined (<a href="https://github.com/zcash/zcash/pull/3907">#3907</a>)</li><li>Update &#8220;Zcash Company&#8221; to &#8220;Electric Coin Company&#8221; (<a href="https://github.com/zcash/zcash/pull/3901">#3901</a>)</li><li>Support additional cross-compilation targets in Rust (<a href="https://github.com/zcash/zcash/pull/3505">#3505</a>)</li></ol>
+
+
+
+<h2>v2.0.5-1</h2>
+
+
+
+<ol><li>We fixed an issue that would cause the Zcashd to crash when calling <code>z_getmigrationstatus</code> while a wallet&#8217;s migration transactions were in the mempool. (<a href="https://github.com/zcash/zcash/pull/3987">#3987</a>)</li><li>We fixed an issue where the wallet would incorrectly calculate the amount to migrate and would not send as many migration transactions as it could each round of migration. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li><li>We fixed an issue that could cause Zcashd to crash while generating migration transactions if a wallet had a large number of sprout notes. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li></ol>
+
+
+
+<p>For a more complete list of changes, please see the&nbsp;<a href="https://github.com/zcash/zcash/pulls?q=is%3Apr+milestone%3Av2.0.5+is%3Aclosed">2.0.5</a>&nbsp;milestone.</p>
+<p>The post <a rel="nofollow" href="../blog/new-release-2-0-5-1/index.html">New Release: 2.0.5-1</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
+]]></content:encoded>
+										</item>
+		<item>
 		<title>Zcash Empowers Charitable Giving</title>
 		<link>https://z.cash/blog/zcash-empowers-charitable-giving/</link>
 				<pubDate>Tue, 16 Apr 2019 15:30:40 +0000</pubDate>
@@ -39,7 +212,7 @@
 
 		<guid isPermaLink="false">https://z.cash/?p=7444</guid>
 				<description><![CDATA[<p>The Electric Coin Company’s mission is to empower everyone with economic freedom and opportunity. We believe that everyone has a [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/zcash-empowers-charitable-giving/">Zcash Empowers Charitable Giving</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/zcash-empowers-charitable-giving/index.html">Zcash Empowers Charitable Giving</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <p>The Electric Coin Company’s mission is to empower everyone with economic freedom and opportunity. We believe that everyone has a right to privacy — in fact, we deem it to be a <em>fundamental </em>human right — and this belief extends to charitable giving.</p>
@@ -160,8 +333,8 @@
 
 
 
-<p><br>No matter which charitable causes you choose to support, Zcash donations empower both the donor and recipient  —  revolutionizing philanthropy. To learn more about Zcash, <a href="https://z.cash/">visit us online</a> or follow us on <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://twitter.com/zcashco" target="_blank">Twitter</a>. <br></p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/zcash-empowers-charitable-giving/">Zcash Empowers Charitable Giving</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p><br>No matter which charitable causes you choose to support, Zcash donations empower both the donor and recipient  —  revolutionizing philanthropy. To learn more about Zcash, <a href="../index.html">visit us online</a> or follow us on <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://twitter.com/zcashco" target="_blank">Twitter</a>. <br></p>
+<p>The post <a rel="nofollow" href="../blog/zcash-empowers-charitable-giving/index.html">Zcash Empowers Charitable Giving</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></content:encoded>
 										</item>
 		<item>
@@ -174,7 +347,7 @@
 
 		<guid isPermaLink="false">https://z.cash/?p=7393</guid>
 				<description><![CDATA[<p>“I’m proud of how we have led the way into this brave new world where it is actually possible to [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/people-behind-zcash-technology-jack-grigg-engineer/">People Behind Zcash Technology: Jack Grigg, Engineer</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/people-behind-zcash-technology-jack-grigg-engineer/index.html">People Behind Zcash Technology: Jack Grigg, Engineer</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <p style="text-align:left"> <em>“I’m proud of how we have led the way into this brave new world where it is actually possible to create fully privacy-preserving interactions on the internet in an efficient way. I’m proud that the work we do around that is entirely open source. We are creating this and creating it for the common good.&#8221; </em><br><br></p>
@@ -258,7 +431,7 @@
 
 
 <p>Zcash is fortunate to have this self-described “UX enthusiast” on-deck, and he encourages more people to contribute to the Zcash protocol. “We definitely need more people who care about this. If you go in with the mindset of ‘doing this because it matters’ then you are going to be more invested in the protocols you design and the things you do, and you’ll end up with an overall better result.”<br></p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/people-behind-zcash-technology-jack-grigg-engineer/">People Behind Zcash Technology: Jack Grigg, Engineer</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/people-behind-zcash-technology-jack-grigg-engineer/index.html">People Behind Zcash Technology: Jack Grigg, Engineer</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></content:encoded>
 										</item>
 		<item>
@@ -272,7 +445,7 @@
 
 		<guid isPermaLink="false">https://z.cash/?p=7374</guid>
 				<description><![CDATA[<p>The light client reference wallet has been built! Sapling shielded transactions now work on mobile devices and we are ready [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/the-zcash-reference-wallet-is-here/">The Zcash Reference Wallet Is Here!</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/the-zcash-reference-wallet-is-here/index.html">The Zcash Reference Wallet Is Here!</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <p>The light client reference wallet has been built! Sapling shielded transactions now work on mobile devices and we are ready for third-party devs to start providing feedback on the code. What previously required gigabytes of data on a server is now accomplished with megabytes of data and computation suitable for a phone.<br></p>
@@ -283,7 +456,7 @@
 
 
 
-<p>This is the fourth installment in our series about the progress and development of the Zcash reference wallet; we invite you to look back at previous articles about <a href="https://z.cash/blog/introducing-the-zcash-reference-wallet/">our goals and what we’re building</a>, <a href="https://z.cash/blog/zcash-reference-wallet-design/">user experience, interface and styling</a> and <a href="https://z.cash/blog/zcash-reference-wallet-light-client-protocol/">the underlying protocol</a>.</p>
+<p>This is the fourth installment in our series about the progress and development of the Zcash reference wallet; we invite you to look back at previous articles about <a href="../blog/introducing-the-zcash-reference-wallet/index.html">our goals and what we’re building</a>, <a href="../blog/zcash-reference-wallet-design/index.html">user experience, interface and styling</a> and <a href="../blog/zcash-reference-wallet-light-client-protocol/index.html">the underlying protocol</a>.</p>
 
 
 
@@ -316,7 +489,7 @@
 
 
 <p><br>We look forward to continuing to work with the Zcash ecosystem to bring financial freedom to everyone. We believe that the adoption of shielded addresses by services like wallets and exchanges will accelerate us toward that goal. This milestone for the reference wallet is just the beginning—stay tuned for updates by following this blog and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://twitter.com/zcashco" target="_blank">our Twitter account</a>. </p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/the-zcash-reference-wallet-is-here/">The Zcash Reference Wallet Is Here!</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/the-zcash-reference-wallet-is-here/index.html">The Zcash Reference Wallet Is Here!</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></content:encoded>
 										</item>
 		<item>
@@ -335,7 +508,7 @@
 
 		<guid isPermaLink="false">https://z.cash/?p=7167</guid>
 				<description><![CDATA[<p>This release of Zcashd v2.0.4 fixes a Sprout wallet security bug, fixes miner address selection behaviour and introduces a new [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/new-release-2-0-4/">New Release: 2.0.4</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/new-release-2-0-4/index.html">New Release: 2.0.4</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <p>This release of Zcashd v2.0.4 fixes a Sprout wallet security bug, fixes miner address selection behaviour and introduces a new consensus rule on testnet to reject blocks that violate turnstiles. Zcashd v2.0.4 will be supported until block 569112, expected to arrive around July 15th, 2019, at which point the software will end-of-support halt and shut down.</p>
@@ -366,7 +539,7 @@
 
 
 
-<p><a href="https://z.cash/support/security/announcements/security-announcement-2019-03-19/">Security Announcement 2019-03-19</a></p>
+<p><a href="../support/security/announcements/security-announcement-2019-03-19/index.html">Security Announcement 2019-03-19</a></p>
 
 
 
@@ -407,7 +580,7 @@
 
 
 <p>For a more complete list of changes, please see the&nbsp;<a href="https://github.com/zcash/zcash/pulls?q=is%3Apr+milestone%3Av2.0.4+is%3Aclosed" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">2.0.4</a>&nbsp;milestone.</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/new-release-2-0-4/">New Release: 2.0.4</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/new-release-2-0-4/index.html">New Release: 2.0.4</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></content:encoded>
 										</item>
 		<item>
@@ -428,14 +601,14 @@
 
 		<guid isPermaLink="false">https://z.cash/?p=7147</guid>
 				<description><![CDATA[<p>The Electric Coin Company has developed consensus code that preserves the Zcash monetary base in the event of a counterfeiting [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/turnstile-enforcement-against-counterfeiting/">Turnstile Enforcement Against Counterfeiting</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/turnstile-enforcement-against-counterfeiting/index.html">Turnstile Enforcement Against Counterfeiting</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
-<p>The Electric Coin Company has developed consensus code that preserves the Zcash monetary base in the event of a counterfeiting compromise within Zcash’s shielded supply. We intend to deploy this as a backwards compatible consensus rule in the Zcashd v2.0.5 release, <a href="https://z.cash/support/schedule/">scheduled</a> for the beginning of May. We believe this new rule does not materially affect users and is low-risk to deploy.<br></p>
+<p>The Electric Coin Company has developed consensus code that preserves the Zcash monetary base in the event of a counterfeiting compromise within Zcash’s shielded supply. We intend to deploy this as a backwards compatible consensus rule in the Zcashd v2.0.5 release, <a href="../support/schedule/index.html">scheduled</a> for the beginning of May. We believe this new rule does not materially affect users and is low-risk to deploy.<br></p>
 
 
 
-<p>We are aware of only one previous vulnerability, <a href="https://z.cash/blog/zcash-counterfeiting-vulnerability-successfully-remediated/">CVE 2019-7167</a>, which before the Sapling network upgrade activation, could have allowed a counterfeiting compromise. Although a compromise was possible, we do not believe that counterfeiting has occurred. The <a href="https://z.cash/blog/zcash-counterfeiting-vulnerability-successfully-remediated/#summary">full disclosure summary</a> includes a list of those reasons.</p>
+<p>We are aware of only one previous vulnerability, <a href="../blog/zcash-counterfeiting-vulnerability-successfully-remediated/index.html">CVE 2019-7167</a>, which before the Sapling network upgrade activation, could have allowed a counterfeiting compromise. Although a compromise was possible, we do not believe that counterfeiting has occurred. The <a href="../blog/zcash-counterfeiting-vulnerability-successfully-remediated/index.html#summary">full disclosure summary</a> includes a list of those reasons.</p>
 
 
 
@@ -455,7 +628,7 @@
 
 
 
-<p>Starting in Zcash v2.0.4 <em>on testnet only</em>, and then planned for Zcash v2.0.5 on mainnet, we have developed a consensus change that codifies our published <a href="https://z.cash/blog/defense-against-counterfeiting-in-shielded-pools/">Defense Against Counterfeiting in Shielded Pools</a> policy. The specification in <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zips/blob/master/zip-0209.rst" target="_blank">ZIP 209</a> is intentionally simple for clarity and broad understanding.</p>
+<p>Starting in Zcash v2.0.4 <em>on testnet only</em>, and then planned for Zcash v2.0.5 on mainnet, we have developed a consensus change that codifies our published <a href="../blog/defense-against-counterfeiting-in-shielded-pools/index.html">Defense Against Counterfeiting in Shielded Pools</a> policy. The specification in <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zips/blob/master/zip-0209.rst" target="_blank">ZIP 209</a> is intentionally simple for clarity and broad understanding.</p>
 
 
 
@@ -472,7 +645,7 @@
 
 
 <p><em>Post update 27 March 2019: ZIP 209 link and context updated to reflect finalized specification.</em></p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/turnstile-enforcement-against-counterfeiting/">Turnstile Enforcement Against Counterfeiting</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/turnstile-enforcement-against-counterfeiting/index.html">Turnstile Enforcement Against Counterfeiting</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></content:encoded>
 										</item>
 		<item>
@@ -485,10 +658,10 @@
 
 		<guid isPermaLink="false">https://z.cash/?p=7130</guid>
 				<description><![CDATA[<p>The French National Assembly&#8217;s Finance Committee recently published a report about virtual currencies. In his foreword to the report, the [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/zcash-is-compatible-with-aml-cft-regulation/">Zcash is Compatible with AML/CFT Regulation</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/zcash-is-compatible-with-aml-cft-regulation/index.html">Zcash is Compatible with AML/CFT Regulation</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
-<p>The French National Assembly&#8217;s Finance Committee recently <a href="http://www2.assemblee-nationale.fr/documents/notice/15/rap-info/i1624/(index)/rapports-information" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">published a report about virtual currencies</a>. In his foreword to the report, the committee chairman, Éric Woerth, suggested that privacy-preserving virtual currencies should be banned. The <a href="https://z.cash/">Electric Coin Company</a> respectfully disagrees with M. Woerth’s suggestion.<br></p>
+<p>The French National Assembly&#8217;s Finance Committee recently <a href="http://www2.assemblee-nationale.fr/documents/notice/15/rap-info/i1624/(index)/rapports-information" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">published a report about virtual currencies</a>. In his foreword to the report, the committee chairman, Éric Woerth, suggested that privacy-preserving virtual currencies should be banned. The <a href="../index.html">Electric Coin Company</a> respectfully disagrees with M. Woerth’s suggestion.<br></p>
 
 
 
@@ -548,7 +721,7 @@
 
 
 
-<p>We believe that well-educated policy makers and regulators write good policy and regulations, so we seek to help those groups understand <a href="https://z.cash/technology/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">how the privacy-preserving technology that underpins Zcash works</a>, what the implications are for regulation and compliance, and most importantly, how a privacy-preserving virtual currency like Zcash is compatible with common AML/CFT measures. <br></p>
+<p>We believe that well-educated policy makers and regulators write good policy and regulations, so we seek to help those groups understand <a href="../technology/index.html" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">how the privacy-preserving technology that underpins Zcash works</a>, what the implications are for regulation and compliance, and most importantly, how a privacy-preserving virtual currency like Zcash is compatible with common AML/CFT measures. <br></p>
 
 
 
@@ -560,8 +733,8 @@
 
 
 
-<p><br>We invite M. Woerth and any other policy-makers and regulators who have concerns regarding Zcash&#8217;s privacy-preserving features to <a href="https://z.cash/contact/">contact us</a> and discuss those concerns. <br></p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/zcash-is-compatible-with-aml-cft-regulation/">Zcash is Compatible with AML/CFT Regulation</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p><br>We invite M. Woerth and any other policy-makers and regulators who have concerns regarding Zcash&#8217;s privacy-preserving features to <a href="../contact/index.html">contact us</a> and discuss those concerns. <br></p>
+<p>The post <a rel="nofollow" href="../blog/zcash-is-compatible-with-aml-cft-regulation/index.html">Zcash is Compatible with AML/CFT Regulation</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></content:encoded>
 										</item>
 		<item>
@@ -574,7 +747,7 @@
 
 		<guid isPermaLink="false">https://z.cash/?p=6945</guid>
 				<description><![CDATA[<p>The Electric Coin Company is pleased to announce we have recently formed a board of directors and seated three members: [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/announcing-the-electric-coin-company-board-of-directors/">Announcing the Electric Coin Company Board of Directors</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/announcing-the-electric-coin-company-board-of-directors/index.html">Announcing the Electric Coin Company Board of Directors</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <p>The Electric Coin Company is pleased to announce we have recently formed a board of directors and seated three members: Alan Fairless, Andrew McLaughlin and Zooko Wilcox.<br></p>
@@ -605,12 +778,12 @@
 
 
 
-<p>Zooko Wilcox is the founder and CEO of the Electric Coin Company. He is one of the original cypherpunks. Zooko is a long-serving technologist and entrepreneur. His experience spans open, decentralized systems; cryptography; information security; and startups. In more than 25 years in the industry, Zooko has contributed to an array of projects — many of which champion privacy implementations — including <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://en.m.wikipedia.org/wiki/DigiCash" target="_blank">DigiCash</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://en.m.wikipedia.org/wiki/Mnet_(peer-to-peer_network)#MojoNation" target="_blank">Mojo Nation</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.silentcircle.com/products-and-solutions/technology/zrtp/" target="_blank">ZRTP</a>, “<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://en.wikipedia.org/wiki/Zooko%27s_triangle" target="_blank">Zooko&#8217;s Triangle</a>,” <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://tahoe-lafs.org/trac/tahoe-lafs" target="_blank">Tahoe-LAFS</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://blake2.net/" target="_blank">BLAKE2</a> and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://sphincs.cr.yp.to/" target="_blank">SPHINCS</a>. He is the founder of the <a href="https://z.cash/">Electric Coin Company</a> and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://leastauthority.com/" target="_blank">Least Authority Enterprises</a>, which uniquely empower individuals with the right to consent about how, when and to whom their personal data is shared. Zooko is on the advisory board at Bolt Labs, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://tezos.com/" target="_blank">Tezos</a> and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://brave.com/" target="_blank">Brave</a>. He serves on the board of directors for <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://agoric.com/" target="_blank">Agoric</a>. He <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://twitter.com/zooko" target="_blank">tweets</a> often, about a range of topics. He used to <a href="http://www.ketotic.org/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">blog about health science</a>, as well.<br><br></p>
+<p>Zooko Wilcox is the founder and CEO of the Electric Coin Company. He is one of the original cypherpunks. Zooko is a long-serving technologist and entrepreneur. His experience spans open, decentralized systems; cryptography; information security; and startups. In more than 25 years in the industry, Zooko has contributed to an array of projects — many of which champion privacy implementations — including <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://en.m.wikipedia.org/wiki/DigiCash" target="_blank">DigiCash</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://en.m.wikipedia.org/wiki/Mnet_(peer-to-peer_network)#MojoNation" target="_blank">Mojo Nation</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.silentcircle.com/products-and-solutions/technology/zrtp/" target="_blank">ZRTP</a>, “<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://en.wikipedia.org/wiki/Zooko%27s_triangle" target="_blank">Zooko&#8217;s Triangle</a>,” <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://tahoe-lafs.org/trac/tahoe-lafs" target="_blank">Tahoe-LAFS</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://blake2.net/" target="_blank">BLAKE2</a> and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://sphincs.cr.yp.to/" target="_blank">SPHINCS</a>. He is the founder of the <a href="../index.html">Electric Coin Company</a> and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://leastauthority.com/" target="_blank">Least Authority Enterprises</a>, which uniquely empower individuals with the right to consent about how, when and to whom their personal data is shared. Zooko is on the advisory board at Bolt Labs, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://tezos.com/" target="_blank">Tezos</a> and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://brave.com/" target="_blank">Brave</a>. He serves on the board of directors for <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://agoric.com/" target="_blank">Agoric</a>. He <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://twitter.com/zooko" target="_blank">tweets</a> often, about a range of topics. He used to <a href="http://www.ketotic.org/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">blog about health science</a>, as well.<br><br></p>
 
 
 
 <p>“I am excited to welcome Alan and Andrew to the board of directors,” says David Campbell, Electric Coin Company COO. “They provide significant strategic, regulatory and operational expertise to the company while also bringing additional credibility to the broader cryptocurrency industry.”<br></p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/announcing-the-electric-coin-company-board-of-directors/">Announcing the Electric Coin Company Board of Directors</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/announcing-the-electric-coin-company-board-of-directors/index.html">Announcing the Electric Coin Company Board of Directors</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></content:encoded>
 										</item>
 		<item>
@@ -623,7 +796,7 @@
 
 		<guid isPermaLink="false">https://z.cash/?p=6886</guid>
 				<description><![CDATA[<p>If you ask Eirik Ogilvie-Wigley how he came to join the Electric Coin Company, he says, “My story is really [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/people-behind-zcash-technology-eirik-ogilvie-wigley-engineer/">People Behind Zcash Technology: Eirik Ogilvie-Wigley, Engineer</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/people-behind-zcash-technology-eirik-ogilvie-wigley-engineer/index.html">People Behind Zcash Technology: Eirik Ogilvie-Wigley, Engineer</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
 <p>If you ask Eirik Ogilvie-Wigley how he came to join the Electric Coin Company, he says, “My story is really one of luck.”<br></p>
@@ -687,173 +860,7 @@
 
 
 <p><br>Eirik’s work at Zcash is not only integral to the overall success of the project but also personally fulfilling, “What makes me happy when I go to sleep is that all these little details, all this fun that I&#8217;ve had [throughout the work day], is also doing this amazing thing.”</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/people-behind-zcash-technology-eirik-ogilvie-wigley-engineer/">People Behind Zcash Technology: Eirik Ogilvie-Wigley, Engineer</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
-]]></content:encoded>
-										</item>
-		<item>
-		<title>Sharing Responsibility</title>
-		<link>https://z.cash/blog/sharing-responsibility/</link>
-				<pubDate>Fri, 22 Feb 2019 15:09:47 +0000</pubDate>
-		<dc:creator><![CDATA[Paige Peterson]]></dc:creator>
-				<category><![CDATA[General]]></category>
-		<category><![CDATA[community]]></category>
-		<category><![CDATA[ecosystem]]></category>
-		<category><![CDATA[Foundation]]></category>
-		<category><![CDATA[governance]]></category>
-		<category><![CDATA[openness and collaboration]]></category>
-
-		<guid isPermaLink="false">https://z.cash/?p=6883</guid>
-				<description><![CDATA[<p>The growing role of the Zcash Foundation To achieve sustainability and growth of the Zcash ecosystem, a diverse effort from [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/sharing-responsibility/">Sharing Responsibility</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
-]]></description>
-								<content:encoded><![CDATA[
-<h3>The growing role of the Zcash Foundation </h3>
-
-
-
-<p>To achieve sustainability and growth of the Zcash ecosystem, a diverse effort from a variety of organizations and individuals is essential. While the Electric Coin Company was the catalyst needed for cultivating Zcash out of its roots as academic research into a real-world, global cryptocurrency, dependence on this single organization could not suffice long-term. When the plans to create a new cryptocurrency were still in the works, an organization was conceived to serve as a complimentary, non-profit arm to represent wider interests. It would serve as part of the governance model to balance bootstrapping the engineering resources required to reach and maintain an in-production network with a forward-looking vision to incorporate interests from a growing, diverse community. </p>
-
-
-
-<p>Even before its <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.zfnd.org/blog/zcash-foundation-officially-nonprofit/" target="_blank">official designation</a> as a 501(c)3 non-profit, the Zcash Foundation had been working towards supporting internet payments and privacy infrastructure for the public good. It had helped onboard charities from around the world to accept private donations and was establishing the start of a grant program, which would support other projects contributing towards building out the Zcash ecosystem. Once formally established, the Foundation was ready to hit the ground running and has been going strong ever since.</p>
-
-
-
-<h3>Community Growth</h3>
-
-
-
-<p>As a result of the Foundation’s maturing, many of the community-related efforts that the Electric Coin Company initially bore the responsibility for have settled into the purview of the non-profit. Over the last year, we’ve seen the Foundation’s ability to bring together diverse interests and perspectives towards a common goal of building better privacy infrastructure. This includes organizing the first Zcash conference, Zcon0, which not only featured presentations and workshops about the Zcash technology and ecosystem but also included much broader topics about privacy in cryptocurrencies. It was <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.zfnd.org/blog/zcon0-recap/" target="_blank">deemed a massive success</a> and the second iteration, <a href="https://www.zfnd.org/blog/zcon1-announcement/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Zcon1</a>, is shaping to exceed that precedent. </p>
-
-
-
-<p>Beyond the conference format, the Foundation has dedicated resources towards <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.zfnd.org/meetups/" target="_blank">supporting local Zcash meetups</a> and administering online Zcash communities. The <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://chat.zcashcommunity.com/" target="_blank">Zcash community chat</a> and <a href="https://forum.zcashcommunity.com/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Zcash forums</a> are central locations for engaging with the diverse community around topics that range from preferred Zcash wallets and exchanges to debates on ASIC mining in Zcash and discussions about the newest advances in zero-knowledge proof technology. Additionally, these are the primary locations for engaging with core Zcash developers at the Electric Coin Company and maintainers of ecosystem services.</p>
-
-
-
-<h3>Research and Development</h3>
-
-
-
-<p>The Foundation started their efforts to enrich the Zcash ecosystem through the aforementioned <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.zfnd.org/grants/" target="_blank">grant program</a> which kicked off within the first year of Zcash’s existence. More recently, they have focused funding on a few key projects to enhance user adoption of Zcash including the quickly growing <a href="https://github.com/ZcashFoundation/zec-qt-wallet">zec-qt-wallet</a> and two in-progress projects: an <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.zfnd.org/blog/wallet-agreements/" target="_blank">iOS mobile wallet</a> supporting shielded addresses and an <a href="https://www.zfnd.org/blog/parity-partnership/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">alternative full-node implementation</a> of Zcash. </p>
-
-
-
-<p>Broadening their scope towards contributing research and stewardship to the Zcash protocol has been another recent step in taking on more responsibility. The Zcash Improvement Proposal (ZIP) process being hosted by the Foundation is a key mechanism to balance influence of the protocol given that the Electric Coin Company is currently the main contributor to engineering and protocol design. Looking ahead, the alternative node implementation and recent hire of a <a href="https://www.zfnd.org/blog/henry-de-valence/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">principle cryptographic researcher</a> will fuel an even greater balance. </p>
-
-
-
-<h3>The Future of Zcash</h3>
-
-
-
-<p>In addition to the successes afforded to the Zcash Foundation maturing over the years, the Electric Coin Company’s accelerating progress is continuing to pave the way for a bright future. We are proud to have some of the most experienced <a href="https://z.cash/blog/tag/invest-in-the-team/">cryptographers and engineers</a> working on maintaining a high quality protocol while steering Zcash toward greater adoption through improved usability. Furthermore, it would be inadequate to not include the community contributors, users, miners, investors and service providers as another critical and complementary arm in Zcash governance. These groups provide indispensable ancillary support and varying use cases. We believe advancing economic freedom and opportunity cannot come from the Electric Coin Company alone and are thrilled to work with such a wide variety of interests sharing the same vision. We’ve got a lot of work to do in the months and years to come, and look forward to the continued collaboration with the Foundation and greater community.<br></p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/sharing-responsibility/">Sharing Responsibility</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
-]]></content:encoded>
-										</item>
-		<item>
-		<title>Goodbye, Zcash Company. Hello, Electric Coin Company.</title>
-		<link>https://z.cash/blog/goodbye-zcash-company-hello-electric-coin-company/</link>
-				<pubDate>Thu, 21 Feb 2019 12:41:03 +0000</pubDate>
-		<dc:creator><![CDATA[Josh Swihart]]></dc:creator>
-				<category><![CDATA[General]]></category>
-		<category><![CDATA[name change]]></category>
-
-		<guid isPermaLink="false">https://z.cash/?p=6841</guid>
-				<description><![CDATA[<p>The Zcash Company is now the Electric Coin Company. We’re changing the name for clarity. Our legal name has always [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/goodbye-zcash-company-hello-electric-coin-company/">Goodbye, Zcash Company. &lt;br /&gt;Hello, Electric Coin Company.</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
-]]></description>
-								<content:encoded><![CDATA[
-<p>The Zcash Company is now the Electric Coin Company. We’re changing the name for clarity.</p>
-
-
-
-<p>Our legal name has always been the Zerocoin Electric Coin Company, LLC, and we’ve been calling ourselves the ‘Zcash Company.’</p>
-
-
-
-<p>But, the company isn’t &#8220;Zcash.&#8221; Zcash is the cryptocurrency we build and support, with the help of others in the community.</p>
-
-
-
-<p>Also, we aren’t the <a href="https://www.zfnd.org/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Zcash Foundation</a>. The Foundation is a separate and independent 501(c)(3) nonprofit organization. It has its own mission, team and board of directors.</p>
-
-
-
-<p>So here we are: Electric Coin Company. It’ll take us a little while to get the new branding right, launch a new domain and change out the sign at the office, but the name change is public, so we wanted to make sure we were on record confirming it.</p>
-
-
-
-<p>Only the name has changed. We are the same team, with the same mission: to empower everyone with economic freedom and opportunity. We developed and help steward Zcash.</p>
-
-
-
-<p>You may have more questions about this move and the company in general. Follow the links to the answers.</p>
-
-
-
-<p><a href="#focus-on-zcash">Will the Electric Coin Company continue to be solely focused on Zcash?</a></p>
-
-
-
-<p><a href="#what-does-ecc-do">What specifically does the Electric Coin Company do?</a></p>
-
-
-
-<p><a href="#what-changes">What changes are planned as a result?</a><br><br></p>
-
-
-
-<h2 id="focus-on-zcash">Will the Electric Coin Company continue to be solely focused on Zcash?</h2>
-
-
-
-<p>The Electric Coin Company is focused on building and supporting Zcash. That includes research and engineering that may, or may not, ever make it into Zcash software. This has been our mission from the very beginning, and we will continue to drive innovation and adoption.</p>
-
-
-
-<h2 id="what-does-ecc-do">What specifically does the Electric Coin Company do?</h2>
-
-
-
-<p>The Electric Coin Company is a team of about 30 people from around the world. The following are some of the things the Electric Coin Company does, along with links to illustrative work:</p>
-
-
-
-<h3>Product Development and Support</h3>
-
-
-
-<ul><li><a href="https://z.cash/blog/final-blossom-goals/">Builds Zcash software</a></li><li><a href="https://eprint.iacr.org/2019/099" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Participates in cryptographic research</a></li><li><a href="https://z.cash/blog/2018-security-audit-results-overview/">Works with third parties to perform regular security audits of Zcash</a></li><li><a href="https://z.cash/blog/zcash-counterfeiting-vulnerability-successfully-remediated/">Improves the safety and security of the Zcash network</a></li><li><a href="https://z.cash/blog/zcash-reference-wallet-light-client-protocol/">Works on the Zcash user experience, such as the reference wallet</a></li><li><a href="https://forum.zcashcommunity.com/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Engages on the community site and forum</a></li><li><a href="https://zcash.readthedocs.io/en/latest/rtd_pages/user_guide.html#" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Builds Zcash documentation</a></li><li><a href="https://z.cash/support">Supports exchanges and wallet providers with tools and engineering for Zcash adoption</a></li></ul>
-
-
-
-<h3>Driving Awareness and Adoption</h3>
-
-
-
-<ul><li><a href="https://z.cash/blog/2019-zcash-go-to-market/">Strategic and go-to-market planning</a></li><li><a href="https://z.cash/blog/2018-zcash-marketing-year-in-review/">Drives broad global adoption</a></li><li><a href="https://z.cash/blog/gemini-announces-support-for-zcash/">Works with exchanges, wallet providers and other third parties to get Zcash listed and supported</a></li><li><a href="https://z.cash/blog/earn-zec-on-coinbase-while-you-learn-about-zcash/">Co-markets with exchanges, wallet providers and other third parties</a></li><li><a href="https://z.cash/investors/">Helps sizeable Zcash holders with solid custody and OTC connections</a></li><li><a href="https://www.dfs.ny.gov/about/press/pr1805141.htm" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Works with regulators to understand Zcash and the benefits of privacy</a></li><li><a href="https://z.cash/trademark-policy/">Manages and protects the Zcash trademark around the world</a></li><li><a href="https://z.cash/blog/zcash-shielded-addresses-are-gdpr-compliant-by-default/">Commissions research on Zcash uses and use cases</a></li><li><a href="https://www.forbes.com/sites/darrynpollock/2019/01/31/zcash-out-to-prove-privacy-is-key-to-crypto-adoption-with-gdpr-avoiding-use-cases" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Manages press relations</a></li><li><a href="https://z.cash/">Maintains and updates the website z.cash</a></li><li><a href="https://twitter.com/zcashco" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Manages Zcash social media</a></li><li><a href="https://z.cash/zh/technology/">Translates content into different languages</a></li><li><a href="https://www.youtube.com/playlist?list=PLVm6KZ09QEQw3EvlfI-NcZUJ5NzFUyqxY" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Develops educational content</a></li><li><a href="https://z.cash/blog/everyone/">Stewards the Zcash brand </a></li><li><a href="https://www.labitconf.com/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Provides education on Zcash at conferences around the world</a></li><li><a href="https://www.zfnd.org/zcon/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Supports the Zcash Foundation-driven Zcon conferences</a></li><li><a href="https://z.cash/blog/how-to-donate-cryptocurrency-to-help-venezuelans-right-now/">Elevates worthy causes with financial and marketing support</a></li></ul>
-
-
-
-<h2 id="what-changes">What changes are planned as a result?</h2>
-
-
-
-<p>The company will use the Electric Coin Company for all messaging and correspondence. This will happen immediately.</p>
-
-
-
-<p>The following is under development and will be rolled out in the coming months:</p>
-
-
-
-<ul><li>The Electric Coin Company brand</li><li>The Electric Coin Company information will be moved from <a href="https://z.cash/">https://z.cash/</a> to a new domain with its own website. This includes company and team information and the company-maintained blog.</li><li>Company email addresses will change to the new domain.</li><li>Social media properties including <a href="https://twitter.com/zcashco" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Twitter</a>, <a href="https://www.linkedin.com/company/zcashco/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">LinkedIn</a>, <a href="https://www.facebook.com/zcashco" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Facebook</a> will change to reflect the new name.</li></ul>
-
-
-
-<p><br>So, that’s it then — Electric Coin Company. The company name has changed but our commitment has not. The path forward is filled with both opportunity and challenges, and we thank you for your support.</p>
-<p>The post <a rel="nofollow" href="https://z.cash/blog/goodbye-zcash-company-hello-electric-coin-company/">Goodbye, Zcash Company. &lt;br /&gt;Hello, Electric Coin Company.</a> appeared first on <a rel="nofollow" href="https://z.cash/">Zcash</a>.</p>
+<p>The post <a rel="nofollow" href="../blog/people-behind-zcash-technology-eirik-ogilvie-wigley-engineer/index.html">People Behind Zcash Technology: Eirik Ogilvie-Wigley, Engineer</a> appeared first on <a rel="nofollow" href="../index.html">Zcash</a>.</p>
 ]]></content:encoded>
 										</item>
 	</channel>
